@@ -83,7 +83,10 @@ kernel/fs/nls/mac-roman.ko
 kernel/fs/nls/mac-turkish.ko
 kernel/fs/unicode/unicode.ko
 kernel/fs/unicode/utf8data.ko
-kernel/fs/ntfs/ntfs.ko
+kernel/fs/smb/common/cifs_arc4.ko
+kernel/fs/smb/common/cifs_md4.ko
+kernel/fs/smb/server/ksmbd.ko
+kernel/fs/ntfs3/ntfs3.ko
 kernel/fs/fuse/fuse.ko
 kernel/fs/fuse/virtiofs.ko
 kernel/fs/overlayfs/overlay.ko
@@ -92,8 +95,6 @@ kernel/fs/f2fs/f2fs.ko
 kernel/fs/pstore/pstore.ko
 kernel/fs/pstore/ramoops.ko
 kernel/fs/erofs/erofs.ko
-kernel/security/samsung/proca/proca_lsm.ko
-kernel/security/samsung/five/five.ko
 kernel/crypto/crypto.ko
 kernel/crypto/crypto_engine.ko
 kernel/crypto/crypto_algapi.ko
@@ -199,7 +200,6 @@ kernel/lib/ts_bm.ko
 kernel/lib/ts_fsm.ko
 kernel/lib/glob.ko
 kernel/lib/mpi/mpi.ko
-kernel/lib/digsig.ko
 kernel/lib/asn1_decoder.ko
 kernel/lib/fonts/font.ko
 kernel/lib/oid_registry.ko
@@ -231,6 +231,7 @@ kernel/drivers/dma/virt-dma.ko
 kernel/drivers/soc/qcom/qcom-geni-se.ko
 kernel/drivers/soc/samsung/exynos-usi.ko
 kernel/drivers/soc/sunxi/sunxi_sram.ko
+kernel/drivers/soc/tegra/cbb/tegra234-cbb.ko
 kernel/drivers/virtio/virtio.ko
 kernel/drivers/virtio/virtio_ring.ko
 kernel/drivers/regulator/fixed.ko
@@ -244,16 +245,19 @@ kernel/drivers/tty/serial/8250/8250_base.ko
 kernel/drivers/tty/serial/8250/8250_pci.ko
 kernel/drivers/tty/serial/8250/8250_dw.ko
 kernel/drivers/tty/serial/8250/8250_pericom.ko
+kernel/drivers/tty/serial/8250/8250_bcm7271.ko
 kernel/drivers/tty/serial/8250/8250_of.ko
 kernel/drivers/tty/serial/amba-pl011.ko
 kernel/drivers/tty/serial/samsung_tty.ko
 kernel/drivers/tty/serial/qcom_geni_serial.ko
+kernel/drivers/tty/serial/tegra-tcu.ko
 kernel/drivers/tty/serial/sprd_serial.ko
 kernel/drivers/tty/serial/serial_mctrl_gpio.ko
 kernel/drivers/tty/serdev/serdev.ko
 kernel/drivers/tty/ttynull.ko
 kernel/drivers/char/hw_random/rng-core.ko
 kernel/drivers/char/hw_random/hisi-rng.ko
+kernel/drivers/char/hw_random/iproc-rng200.ko
 kernel/drivers/char/hw_random/arm_smccc_trng.ko
 kernel/drivers/char/hw_random/cn10k-rng.ko
 kernel/drivers/iommu/iova.ko
@@ -361,6 +365,8 @@ kernel/drivers/i2c/algos/i2c-algo-bit.ko
 kernel/drivers/i3c/i3c.ko
 kernel/drivers/media/i2c/ir-kbd-i2c.ko
 kernel/drivers/media/mc/mc.ko
+kernel/drivers/media/v4l2-core/v4l2-async.ko
+kernel/drivers/media/v4l2-core/v4l2-fwnode.ko
 kernel/drivers/media/v4l2-core/v4l2-mem2mem.ko
 kernel/drivers/media/v4l2-core/v4l2-dv-timings.ko
 kernel/drivers/media/v4l2-core/videodev.ko
@@ -386,6 +392,7 @@ kernel/drivers/md/dm-crypt.ko
 kernel/drivers/md/dm-default-key.ko
 kernel/drivers/md/dm-snapshot.ko
 kernel/drivers/md/dm-verity.ko
+kernel/drivers/md/dm-bow.ko
 kernel/drivers/md/dm-user.ko
 kernel/drivers/edac/edac_core.ko
 kernel/drivers/cpufreq/freq_table.ko
@@ -474,6 +481,8 @@ kernel/drivers/devfreq/governor_powersave.ko
 kernel/drivers/devfreq/governor_userspace.ko
 kernel/drivers/devfreq/governor_passive.ko
 kernel/drivers/extcon/extcon-core.ko
+kernel/drivers/memory/tegra/tegra-mc.ko
+kernel/drivers/memory/tegra/tegra186-emc.ko
 kernel/drivers/iio/industrialio.ko
 kernel/drivers/powercap/powercap_sys.ko
 kernel/drivers/android/binder.ko
@@ -482,8 +491,6 @@ kernel/drivers/nvmem/nvmem_core.ko
 kernel/drivers/gnss/gnss.ko
 kernel/drivers/interconnect/icc-core.ko
 kernel/drivers/interconnect/qcom/interconnect_qcom.ko
-kernel/drivers/samsung/debug/sec_debug_base_built.ko
-kernel/drivers/samsung/debug/sec_debug_check_preempt_built.ko
 kernel/sound/soundcore.ko
 kernel/sound/core/snd.ko
 kernel/sound/core/snd-hwdep.ko
@@ -595,7 +602,6 @@ kernel/net/netfilter/xt_statistic.ko
 kernel/net/netfilter/xt_string.ko
 kernel/net/netfilter/xt_time.ko
 kernel/net/netfilter/xt_u32.ko
-kernel/net/netfilter/xt_domainfilter.ko
 kernel/net/ipv4/ip_tunnel.ko
 kernel/net/ipv4/ipip.ko
 kernel/net/ipv4/gre.ko
@@ -624,7 +630,6 @@ kernel/net/ipv4/netfilter/nf_dup_ipv4.ko
 kernel/net/ipv4/inet_diag.ko
 kernel/net/ipv4/tcp_diag.ko
 kernel/net/ipv4/udp_diag.ko
-kernel/net/ipv4/tcp_bic.ko
 kernel/net/ipv4/tcp_cubic.ko
 kernel/net/xfrm/xfrm_algo.ko
 kernel/net/xfrm/xfrm_user.ko
@@ -660,5 +665,4 @@ kernel/net/vmw_vsock/vsock.ko
 kernel/net/vmw_vsock/vsock_diag.ko
 kernel/net/vmw_vsock/vmw_vsock_virtio_transport_common.ko
 kernel/net/vmw_vsock/vsock_loopback.ko
-kernel/net/ncm/ncm.ko
 kernel/virt/lib/irqbypass.ko
