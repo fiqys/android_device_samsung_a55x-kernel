@@ -225,7 +225,6 @@ zm918_haptic.ko
 hwmon.ko
 exynos-bts.ko
 exynos-btsops8845.ko
-exynos-usb-audio-offloading.ko
 snd-soc-s5m3700.ko
 snd-soc-tfa98xx.ko
 snd-soc-tfa_sysfs.ko
